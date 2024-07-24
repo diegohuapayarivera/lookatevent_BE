@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 @Setter
 @ToString
 @RequiredArgsConstructor
-@Table(name = "groups")
+@Table(name = "group")
 @Entity
 public class Group {
 
@@ -20,6 +20,8 @@ public class Group {
     private String name;
 
     private String email;
+
+    private String description;
 
     private LocalDateTime dateCreated;
     private LocalDateTime dateUpdated;

@@ -46,7 +46,8 @@ public class GroupServiceImpl implements GroupService {
 
     @Override
     public void deleteGroup(Integer id) {
-        Group deleteGroup = this.groupRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Recurso no encontrado"));
+        Group deleteGroup = this.groupRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Recurso no encontrado"));
         log.warn("Group deleteByID service -> " + deleteGroup.getId());
         this.groupRepository.deleteById(deleteGroup.getId());
     }

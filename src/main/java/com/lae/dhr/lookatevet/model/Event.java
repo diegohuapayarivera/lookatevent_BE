@@ -3,6 +3,7 @@ package com.lae.dhr.lookatevet.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 
@@ -20,11 +21,9 @@ public class Event {
 
     private Integer groupId;
 
-    private Date dateReservation;
+    private LocalDate dateEvent;
 
-    private String title;
-
-    private String place;
+    private String stateEvent;
 
     private LocalDateTime dateCreated;
     private LocalDateTime dateUpdated;

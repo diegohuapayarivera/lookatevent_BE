@@ -1,19 +1,20 @@
 package com.lae.dhr.lookatevet.model;
 
-
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 
 @Getter
 @Setter
 @ToString
 @RequiredArgsConstructor
-@Table(name = "availabilityDates")
+@Table(name = "reservationEvent")
 @Entity
-public class AvailabilityDate {
+public class ReservationEvent {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,9 +22,14 @@ public class AvailabilityDate {
 
     private Integer groupId;
 
-    private Date dateEvent;
+    private Integer eventId;
+
+    private LocalDateTime timeEvent;
+
+    private String place;
+
+    private String title;
 
     private LocalDateTime dateCreated;
     private LocalDateTime dateUpdated;
-
 }

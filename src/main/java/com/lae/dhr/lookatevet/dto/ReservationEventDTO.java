@@ -5,20 +5,23 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class OccupiedDateDTO {
+public class ReservationEventDTO {
 
     private Integer id;
 
     private Integer groupId;
 
-    private Date dateOccupied;
+    private Integer eventId;
 
-    private String reason;
+    private LocalDateTime timeEvent;
 
+    private String place;
+
+    private String title;
 }
