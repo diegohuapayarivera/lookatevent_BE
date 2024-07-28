@@ -1,10 +1,12 @@
 package com.lae.dhr.lookatevet.dto;
 
+import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Data
@@ -15,11 +17,9 @@ public class EventDTO {
 
     private Integer id;
 
-    private Integer groupId;
+    private Integer idOrchestra;
 
-    private Date dateReservation;
+    private LocalDate dateEvent;
 
-    private String title;
-
-    private String place;
+    private String stateEvent;
 }

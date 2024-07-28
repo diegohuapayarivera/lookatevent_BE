@@ -30,7 +30,7 @@ public class EventServiceImpl implements EventService {
     @Override
     public Event createEvent(EventDTO eventDTO) {
         Event createEvent = modelMapper.map(eventDTO, Event.class);
-        createEvent.setDateCreated(LocalDateTime.now());
+        createEvent.setDateCreate(LocalDateTime.now());
         log.info("Event create Service ->" + createEvent);
         return this.eventRepository.save(createEvent);
     }
@@ -39,7 +39,7 @@ public class EventServiceImpl implements EventService {
     @Override
     public Event updateEvent(EventDTO eventDTO) {
         Event updateEvent = modelMapper.map(eventDTO, Event.class);
-        updateEvent.setDateUpdated(LocalDateTime.now());
+        updateEvent.setDateUpdate(LocalDateTime.now());
         log.info("Event update Service ->" + updateEvent);
         return this.eventRepository.save(updateEvent);
     }

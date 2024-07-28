@@ -1,5 +1,6 @@
 package com.lae.dhr.lookatevet.dto;
 
+import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,13 +16,10 @@ public class ReservationEventDTO {
 
     private Integer id;
 
-    private Integer groupId;
+    private Integer idEvent;
 
-    private Integer eventId;
-
-    private LocalDateTime timeEvent;
+    private LocalDateTime reservationTime;
 
     private String place;
 
-    private String title;
 }

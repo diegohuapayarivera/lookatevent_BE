@@ -5,28 +5,33 @@ import lombok.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 @Getter
 @Setter
 @ToString
 @RequiredArgsConstructor
-@Table(name = "event")
+@Table(name = "tb_Events")
 @Entity
 public class Event {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "col_Id")
     private Integer id;
 
-    private Integer groupId;
+    @Column(name = "col_IdOrchestra")
+    private Integer idOrchestra;
 
+    @Column(name = "col_DateEvent")
     private LocalDate dateEvent;
 
+    @Column(name = "col_StateEvent")
     private String stateEvent;
 
-    private LocalDateTime dateCreated;
-    private LocalDateTime dateUpdated;
+    @Column(name = "col_DateCreate")
+    private LocalDateTime dateCreate;
+    @Column(name = "col_DateUpdate")
+    private LocalDateTime dateUpdate;
 
 
 }

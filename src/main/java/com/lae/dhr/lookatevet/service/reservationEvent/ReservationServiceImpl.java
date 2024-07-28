@@ -3,7 +3,6 @@ package com.lae.dhr.lookatevet.service.reservationEvent;
 import com.lae.dhr.lookatevet.dto.ReservationEventDTO;
 import com.lae.dhr.lookatevet.exception.ResourceNotFoundException;
 import com.lae.dhr.lookatevet.model.ReservationEvent;
-import com.lae.dhr.lookatevet.repository.GroupRepository;
 import com.lae.dhr.lookatevet.repository.ReservationEventRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
@@ -31,7 +30,7 @@ public class ReservationServiceImpl implements ReservationService{
     @Override
     public ReservationEvent createReservation(ReservationEventDTO reservationEventDTO) {
         ReservationEvent createReservation = this.modelMapper.map(reservationEventDTO, ReservationEvent.class);
-        createReservation.setDateCreated(LocalDateTime.now());
+        createReservation.setDateCreate(LocalDateTime.now());
         log.info("Reservation create Service -> " + createReservation);
         return createReservation;
     }
@@ -39,7 +38,7 @@ public class ReservationServiceImpl implements ReservationService{
     @Override
     public ReservationEvent updateReservation(ReservationEventDTO reservationEventDTO) {
         ReservationEvent updateReservation = this.modelMapper.map(reservationEventDTO, ReservationEvent.class);
-        updateReservation.setDateCreated(LocalDateTime.now());
+        updateReservation.setDateUpdate(LocalDateTime.now());
         log.info("Reservation update Service -> " + updateReservation);
         return updateReservation;
     }

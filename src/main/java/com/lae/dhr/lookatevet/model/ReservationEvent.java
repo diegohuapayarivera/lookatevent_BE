@@ -12,24 +12,26 @@ import java.time.LocalDateTime;
 @Setter
 @ToString
 @RequiredArgsConstructor
-@Table(name = "reservationEvent")
+@Table(name = "tb_Reservation_Events")
 @Entity
 public class ReservationEvent {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "col_Id")
     private Integer id;
 
-    private Integer groupId;
+    @Column(name = "col_idEvent")
+    private Integer idEvent;
 
-    private Integer eventId;
+    @Column(name = "col_ReservationTime")
+    private LocalDateTime reservationTime;
 
-    private LocalDateTime timeEvent;
-
+    @Column(name = "col_Place")
     private String place;
 
-    private String title;
-
-    private LocalDateTime dateCreated;
-    private LocalDateTime dateUpdated;
+    @Column(name = "col_DateCreate")
+    private LocalDateTime dateCreate;
+    @Column(name = "col_DateUpdate")
+    private LocalDateTime dateUpdate;
 }

@@ -9,21 +9,28 @@ import java.time.LocalDateTime;
 @Setter
 @ToString
 @RequiredArgsConstructor
-@Table(name = "group")
+@Table(name = "tb_Orchestras")
 @Entity
-public class Group {
+public class Orchestra {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "col_Id")
     private Integer id;
 
+    @Column(name = "col_Name")
     private String name;
 
+    @Column(name = "col_Email")
     private String email;
 
+    @Column(name = "col_Description")
     private String description;
 
-    private LocalDateTime dateCreated;
-    private LocalDateTime dateUpdated;
+    @Column(name = "col_Date_Create")
+    private LocalDateTime dateCreate;
+
+    @Column(name = "col_Date_Update")
+    private LocalDateTime dateUpdate;
 
 }

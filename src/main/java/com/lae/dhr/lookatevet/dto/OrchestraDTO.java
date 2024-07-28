@@ -10,7 +10,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class GroupDTO {
+public class OrchestraDTO {
 
     private Integer id;
 

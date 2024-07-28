@@ -2,13 +2,17 @@ server:
   port: 8080
 spring:
   datasource:
-    url: jdbc:h2:mem:testdb
-    driver-class-name: org.h2.Driver
+    url: jdbc:sqlserver://localhost:1433;databaseName=devatevent
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
     username: sa
-    password:
+    password: 12345678
   h2:
     console:
-      enabled: true
+      enabled: false
+  jpa:
+    show-sql: true
+    #hibernate:
+      #ddl-auto: update
 management:
   endpoint:
     health:
