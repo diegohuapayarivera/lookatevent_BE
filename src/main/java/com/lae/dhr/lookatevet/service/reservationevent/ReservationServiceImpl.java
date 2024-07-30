@@ -1,4 +1,4 @@
-package com.lae.dhr.lookatevet.service.reservationEvent;
+package com.lae.dhr.lookatevet.service.reservationevent;
 
 import com.lae.dhr.lookatevet.dto.ReservationEventDTO;
 import com.lae.dhr.lookatevet.exception.ResourceNotFoundException;

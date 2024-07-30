@@ -24,7 +24,7 @@ public class ReservationEvent {
     @Column(name = "col_idEvent")
     private Integer idEvent;
 
-    @Column(name = "col_ReservationTime")
+    @Column(name = "col_Reservation_Time")
     private LocalDateTime reservationTime;
 
     @Column(name = "col_Place")

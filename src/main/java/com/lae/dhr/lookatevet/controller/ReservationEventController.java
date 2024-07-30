@@ -2,7 +2,7 @@ package com.lae.dhr.lookatevet.controller;
 
 import com.lae.dhr.lookatevet.dto.ReservationEventDTO;
 import com.lae.dhr.lookatevet.model.ReservationEvent;
-import com.lae.dhr.lookatevet.service.reservationEvent.ReservationService;
+import com.lae.dhr.lookatevet.service.reservationevent.ReservationService;
 import jakarta.validation.constraints.NotNull;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -41,9 +41,9 @@ public class ReservationEventController {
     }
 
     @DeleteMapping("/delete/{idDelete}")
-    public ResponseEntity<?> deleteGroup(@PathVariable Integer idDelete){
+    public ResponseEntity<String> deleteGroup(@PathVariable Integer idDelete){
         log.info("Reservation delete controller -> " + idDelete);
         this.reservationService.deleteReservation(idDelete);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        return new ResponseEntity<>("Data elimination", HttpStatus.NO_CONTENT);
     }
 }

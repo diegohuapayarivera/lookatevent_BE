@@ -1,6 +1,6 @@
 package com.lae.dhr.lookatevet.dto;
 
-import jakarta.persistence.Column;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,6 +18,7 @@ public class ReservationEventDTO {
 
     private Integer idEvent;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "HH:mm")
     private LocalDateTime reservationTime;
 
     private String place;

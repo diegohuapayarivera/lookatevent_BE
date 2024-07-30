@@ -8,11 +8,11 @@ import java.util.List;
 
 public interface OrchestraService {
 
-    List<Orchestra> getClients();
+    List<Orchestra> getOrchertas();
 
-    Orchestra createClient(OrchestraDTO orchestraDTO);
+    Orchestra createOrcherta(OrchestraDTO orchestraDTO);
 
-    Orchestra updateClient(OrchestraDTO orchestraDTO);
+    Orchestra updateOrcherta(OrchestraDTO orchestraDTO) ;
 
-    void deleteClient(Integer id);
+    void deleteOrcherta(Integer id);
 }

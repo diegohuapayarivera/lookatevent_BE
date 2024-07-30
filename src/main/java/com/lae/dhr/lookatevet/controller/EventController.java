@@ -41,9 +41,9 @@ public class EventController {
     }
 
     @DeleteMapping("/delete/{idDelete}")
-    public ResponseEntity<?> deleteEvent(@PathVariable Integer idDelete){
+    public ResponseEntity<String> deleteEvent(@PathVariable Integer idDelete){
         log.info("Event delete controller -> " + idDelete);
         this.eventService.deleteEvent(idDelete);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        return new ResponseEntity<>("Data elimination", HttpStatus.NO_CONTENT);
     }
 }

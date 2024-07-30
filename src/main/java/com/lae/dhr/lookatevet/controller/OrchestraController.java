@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.SQLException;
 import java.util.List;
 
 @RestController
@@ -24,27 +25,27 @@ public class OrchestraController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Orchestra>> getClients(){
-        log.info("Orchestras get List controller -> " + this.orchestraService.getClients());
-        return new ResponseEntity<>(this.orchestraService.getClients(), HttpStatus.OK);
+    public ResponseEntity<List<Orchestra>> getClients() {
+        log.info("Orchestras get List controller -> " + this.orchestraService.getOrchertas());
+        return new ResponseEntity<>(this.orchestraService.getOrchertas(), HttpStatus.OK);
     }
 
     @PostMapping("/create")
-    public ResponseEntity<Orchestra> createClient(@RequestBody @NotNull OrchestraDTO orchestraDTO){
+    public ResponseEntity<Orchestra> createClient(@RequestBody @NotNull OrchestraDTO orchestraDTO) {
         log.info("Orchestras create controller -> " + orchestraDTO.toString());
-        return new ResponseEntity<>(this.orchestraService.createClient(orchestraDTO), HttpStatus.CREATED);
+        return new ResponseEntity<>(this.orchestraService.createOrcherta(orchestraDTO), HttpStatus.CREATED);
     }
 
     @PutMapping("/update")
-    public ResponseEntity<Orchestra> updateClient(@RequestBody @NotNull OrchestraDTO orchestraDTO){
-        log.info("Orchestras update controller -> "+ orchestraDTO.toString());
-        return new ResponseEntity<>(this.orchestraService.updateClient(orchestraDTO), HttpStatus.OK);
+    public ResponseEntity<Orchestra> updateClient(@RequestBody @NotNull OrchestraDTO orchestraDTO) {
+        log.info("Orchestras update controller -> " + orchestraDTO.toString());
+        return new ResponseEntity<>(this.orchestraService.updateOrcherta(orchestraDTO), HttpStatus.OK);
     }
 
     @DeleteMapping("/delete/{idDelete}")
-    public ResponseEntity<?> deleteClient(@PathVariable Integer idDelete){
+    public ResponseEntity<String> deleteClient(@PathVariable Integer idDelete) {
         log.info("Orchestras delete controller -> " + idDelete);
-        this.orchestraService.deleteClient(idDelete);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        this.orchestraService.deleteOrcherta(idDelete);
+        return new ResponseEntity<>("Data elimination", HttpStatus.NO_CONTENT);
     }
 }
